@@ -1,0 +1,178 @@
+/* =========================
+   ASTORIA DESIGN SYSTEM
+   globals.css
+   ========================= */
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+  /* Couleurs principales */
+  --color-primary: #4da6ff;       /* bleu ciel */
+  --color-secondary: #ff7eb3;     /* rose pastel */
+  --color-accent: #ffd166;        /* jaune doux */
+  --color-success: #7bd389;       /* vert printemps */
+
+  /* Couleurs de fond */
+  --color-bg-main: #f6fbff;
+  --color-bg-soft: #eaf6ff;
+  --color-bg-card: #ffffffcc;
+
+  /* Texte */
+  --color-text-main: #2c3e50;
+  --color-text-light: #6b7c93;
+
+  /* Dégradés */
+  --gradient-main: linear-gradient(135deg, #4da6ff, #7bd389, #ffd166, #ff7eb3);
+  --gradient-soft: linear-gradient(180deg, #ffffff, #eaf6ff);
+
+  /* Bordures */
+  --radius-main: 20px;
+  --radius-soft: 12px;
+
+  /* Ombres */
+  --shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.12);
+
+  /* Typographie */
+  --font-main: "Segoe UI", "Poppins", sans-serif;
+}
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+  font-family: var(--font-main);
+  background: var(--gradient-soft);
+  color: var(--color-text-main);
+  line-height: 1.6;
+}
+
+/* ===== BACKGROUND DECORATION ===== */
+/* Effet inspiré des fleurs / nature de l’image */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, #ffd16633, transparent 40%),
+              radial-gradient(circle at 80% 30%, #ff7eb333, transparent 40%),
+              radial-gradient(circle at 50% 80%, #7bd38933, transparent 40%);
+  z-index: -1;
+}
+
+/* ===== HEADINGS ===== */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+/* ===== LINKS ===== */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+/* ===== BUTTONS ===== */
+button {
+  border: none;
+  padding: 12px 20px;
+  border-radius: var(--radius-soft);
+  background: var(--gradient-main);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: var(--shadow-soft);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: var(--color-bg-card);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-main);
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: white;
+  border-radius: var(--radius-main);
+  padding: 10px 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* ===== BADGES ===== */
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+/* ===== INPUTS ===== */
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--radius-soft);
+  border: 1px solid #ddd;
+  background: #fff;
+  transition: 0.2s;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px #4da6ff22;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+  background: var(--gradient-main);
+  color: white;
+  border-top-left-radius: var(--radius-main);
+  border-top-right-radius: var(--radius-main);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
