@@ -29,7 +29,7 @@ export function Hero() {
           <Input
             type="search"
             placeholder={
-              isFrench ? "Rechercher sur Astoria.gouv.aor..." : "Search on Astoria.gouv.aor..."
+              isFrench ? "Rechercher sur info.gov.aor..." : "Search on info.gov.aor.aor..."
             }
             className="pl-10 h-12 bg-gray-100 text-gray-900 rounded-lg border border-gray-300"
           />

@@ -246,20 +246,31 @@ export function Footer() {
 
         <div className="py-8">
           <div className="flex flex-col md:flex-row justify-between items-start gap-8">
-            <div className="flex items-center gap-4">
-              <Link href={`/${currentLocale}`}>
-                <img
-                  src="/images/astoria-government-logo-font.png"
-                  alt="Astoria Government"
-                  className="h-16 w-auto"
-                />
-              </Link>
-            </div>
+            <Link href={`/${currentLocale}`} className="flex items-center gap-3">
+              <img
+                src="/images/astoria-government-logo-font.png"
+                alt="Gouvernement"
+                className="h-12 w-auto"
+              />
+              <div className="flex flex-col">
+                <span className="text-lg font-bold text-[#003580] leading-tight">Gouvernement</span>
+                <span className="text-xs text-gray-500 leading-tight">info.gov.aor</span>
+              </div>
+            </Link>
             <div className="flex flex-col items-end gap-2">
               <span className="text-sm text-gray-600">
-                {isFrench
-                  ? "Ce site est géré par le Service d'Information du Gouvernement (SIG)."
-                  : "This site is managed by the Government Information Service."}
+                {isFrench ? "Ce site est géré par le " : "This site is managed by the "}
+                <Link
+                  href="https://sig.gov.aor/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#003580] hover:underline"
+                >
+                  {isFrench
+                    ? "Service d'Information du Gouvernement (SIG)"
+                    : "Government Information Service"}
+                </Link>
+                .
               </span>
               <div className="flex flex-wrap gap-x-6 gap-y-2 justify-end">
                 <Link
@@ -298,43 +309,49 @@ export function Footer() {
 
         <div className="pt-8">
           <div className="flex flex-col gap-4">
-            <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-2">
               <Link
                 href={`/${currentLocale}/sitemap`}
                 className="text-sm text-gray-600 hover:text-[#003580] transition-colors"
               >
                 Plan du site
               </Link>
+              <span className="text-gray-400">|</span>
               <Link
                 href={`/${currentLocale}/accessibility`}
                 className="text-sm text-gray-600 hover:text-[#003580] transition-colors"
               >
                 Accessibilité : totalement conforme
               </Link>
+              <span className="text-gray-400">|</span>
               <Link
                 href={`/${currentLocale}/legal/terms`}
                 className="text-sm text-gray-600 hover:text-[#003580] transition-colors"
               >
                 Mentions légales
               </Link>
+              <span className="text-gray-400">|</span>
               <Link
                 href={`/${currentLocale}/legal/privacy`}
                 className="text-sm text-gray-600 hover:text-[#003580] transition-colors"
               >
                 Données personnelles
               </Link>
+              <span className="text-gray-400">|</span>
               <Link
                 href={`/${currentLocale}/legal/cookies`}
                 className="text-sm text-gray-600 hover:text-[#003580] transition-colors"
               >
                 Gestion des cookies
               </Link>
+              <span className="text-gray-400">|</span>
               <Link
                 href={`/${currentLocale}/notifications`}
                 className="text-sm text-gray-600 hover:text-[#003580] transition-colors"
               >
                 Notifications
               </Link>
+              <span className="text-gray-400">|</span>
               <Link
                 href={`/${currentLocale}/publications`}
                 className="text-sm text-gray-600 hover:text-[#003580] transition-colors"

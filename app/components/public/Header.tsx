@@ -7,6 +7,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { Menu, X, Search, Settings, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const dropdownVariants = {
+  hidden: { opacity: 0, y: -10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" as const } },
+  exit: { opacity: 0, y: -10, transition: { duration: 0.15, ease: "easeIn" as const } },
+};
 
 const aLaUneContent = {
   fr: {
@@ -154,8 +161,8 @@ const governmentLinks = {
       title: "Le Gouvernement",
       links: [
         { name: "Composition du Gouvernement", href: "/fr/government/composition" },
-        { name: "Conseil des ministre", href: "/fr/government/council" },
-        { name: "Ministères", href: "/fr/government/ministries" },
+        { name: "Conseil des ministre", href: "/fr/government/composition/council" },
+        { name: "Ministères", href: "/fr/government/composition/ministries" },
         { name: "Services du Président", href: "/fr/government/services" },
         { name: "Patrimoine", href: "/fr/government/heritage" },
       ],
@@ -425,17 +432,117 @@ export function Header() {
               </button>
             </div>
 
-            {activeDropdown === "alaune" && (
-              <div className="absolute left-0 top-full w-full bg-white border-t border-gray-200 shadow-lg z-50">
-                <div className="max-w-7xl mx-auto px-4 py-6">
-                  <div className="grid grid-cols-4 gap-8">
-                    {aLaUne.sections.map((section) => (
-                      <div key={section.title}>
+            <AnimatePresence>
+              {activeDropdown === "alaune" && (
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  variants={dropdownVariants}
+                  className="absolute left-0 top-full w-full bg-white border-t border-gray-200 shadow-lg z-50"
+                >
+                  <div className="max-w-7xl mx-auto px-4 py-6">
+                    <div className="grid grid-cols-4 gap-8">
+                      {aLaUne.sections.map((section) => (
+                        <div key={section.title}>
+                          <h3 className="font-semibold text-sm text-[#003580] mb-3 border-b border-gray-200 pb-2">
+                            {section.title}
+                          </h3>
+                          <ul className="space-y-2">
+                            {section.links.map((link) => (
+                              <li key={link.name}>
+                                <Link
+                                  href={link.href}
+                                  onClick={() => setActiveDropdown(null)}
+                                  className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
+                                >
+                                  {link.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
+              {activeDropdown === "policies" && (
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  variants={dropdownVariants}
+                  className="absolute left-0 top-full w-full bg-white border-t border-gray-200 shadow-lg z-50"
+                >
+                  <div className="max-w-7xl mx-auto px-4 py-6">
+                    <ul className="grid grid-cols-4 gap-4">
+                      {policies.map((link) => (
+                        <li key={link.name}>
+                          <Link
+                            href={link.href}
+                            onClick={() => setActiveDropdown(null)}
+                            className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
+                          >
+                            {link.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              )}
+
+              {activeDropdown === "risks" && (
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  variants={dropdownVariants}
+                  className="absolute left-0 top-full w-full bg-white border-t border-gray-200 shadow-lg z-50"
+                >
+                  <div className="max-w-7xl mx-auto px-4 py-6">
+                    <ul className="grid grid-cols-4 gap-4">
+                      {risks.map((link) => (
+                        <li key={link.name}>
+                          <Link
+                            href={link.href}
+                            onClick={() => setActiveDropdown(null)}
+                            className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
+                          >
+                            {link.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              )}
+
+              {activeDropdown === "government" && (
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  variants={dropdownVariants}
+                  className="absolute left-0 top-full w-full bg-white border-t border-gray-200 shadow-lg z-50"
+                >
+                  <div className="max-w-7xl mx-auto px-4 py-6">
+                    <div className="grid grid-cols-2 gap-8">
+                      <div>
                         <h3 className="font-semibold text-sm text-[#003580] mb-3 border-b border-gray-200 pb-2">
-                          {section.title}
+                          {government.primeMinister.title}
                         </h3>
+                        <Link
+                          href={government.primeMinister.href}
+                          onClick={() => setActiveDropdown(null)}
+                          className="block text-sm text-gray-700 hover:text-[#003580] transition-colors mb-2"
+                        >
+                          {government.primeMinister.name}
+                        </Link>
                         <ul className="space-y-2">
-                          {section.links.map((link) => (
+                          {government.primeMinister.links.map((link) => (
                             <li key={link.name}>
                               <Link
                                 href={link.href}
@@ -448,158 +555,90 @@ export function Header() {
                           ))}
                         </ul>
                       </div>
-                    ))}
+                      <div>
+                        <h3 className="font-semibold text-sm text-[#003580] mb-3 border-b border-gray-200 pb-2">
+                          {government.government.title}
+                        </h3>
+                        <ul className="space-y-2">
+                          {government.government.links.map((link) => (
+                            <li key={link.name}>
+                              <Link
+                                href={link.href}
+                                onClick={() => setActiveDropdown(null)}
+                                className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
+                              >
+                                {link.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            )}
+                </motion.div>
+              )}
 
-            {activeDropdown === "policies" && (
-              <div className="absolute left-0 top-full w-full bg-white border-t border-gray-200 shadow-lg z-50">
-                <div className="max-w-7xl mx-auto px-4 py-6">
-                  <ul className="grid grid-cols-4 gap-4">
-                    {policies.map((link) => (
-                      <li key={link.name}>
+              {activeDropdown === "useful" && (
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  variants={dropdownVariants}
+                  className="absolute left-0 top-full w-full bg-white border-t border-gray-200 shadow-lg z-50"
+                >
+                  <div className="max-w-7xl mx-auto px-4 py-6">
+                    <div className="grid grid-cols-2 gap-8">
+                      <div>
+                        <h3 className="font-semibold text-sm text-[#003580] mb-3 border-b border-gray-200 pb-2">
+                          {useful.title}
+                        </h3>
+                        <ul className="space-y-2">
+                          {useful.sites.map((site) => (
+                            <li key={site.name}>
+                              <a
+                                href={site.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() => setActiveDropdown(null)}
+                                className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
+                              >
+                                <span className="font-medium">{site.name}</span>
+                                <span className="block text-xs text-gray-500">{site.desc}</span>
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-sm text-[#003580] mb-3 border-b border-gray-200 pb-2">
+                          {isFrench ? "Par sujet" : "By topic"}
+                        </h3>
+                        <ul className="grid grid-cols-2 gap-2">
+                          {useful.subjects.map((subject) => (
+                            <li key={subject.name}>
+                              <Link
+                                href={subject.href}
+                                onClick={() => setActiveDropdown(null)}
+                                className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
+                              >
+                                {subject.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
                         <Link
-                          href={link.href}
+                          href={useful.allSites.href}
                           onClick={() => setActiveDropdown(null)}
-                          className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
+                          className="inline-block text-sm text-[#003580] hover:underline mt-3"
                         >
-                          {link.name}
+                          {useful.allSites.name}
                         </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
-
-            {activeDropdown === "risks" && (
-              <div className="absolute left-0 top-full w-full bg-white border-t border-gray-200 shadow-lg z-50">
-                <div className="max-w-7xl mx-auto px-4 py-6">
-                  <ul className="grid grid-cols-4 gap-4">
-                    {risks.map((link) => (
-                      <li key={link.name}>
-                        <Link
-                          href={link.href}
-                          onClick={() => setActiveDropdown(null)}
-                          className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
-                        >
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
-
-            {activeDropdown === "government" && (
-              <div className="absolute left-0 top-full w-full bg-white border-t border-gray-200 shadow-lg z-50">
-                <div className="max-w-7xl mx-auto px-4 py-6">
-                  <div className="grid grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="font-semibold text-sm text-[#003580] mb-3 border-b border-gray-200 pb-2">
-                        {government.primeMinister.title}
-                      </h3>
-                      <Link
-                        href={government.primeMinister.href}
-                        onClick={() => setActiveDropdown(null)}
-                        className="block text-sm text-gray-700 hover:text-[#003580] transition-colors mb-2"
-                      >
-                        {government.primeMinister.name}
-                      </Link>
-                      <ul className="space-y-2">
-                        {government.primeMinister.links.map((link) => (
-                          <li key={link.name}>
-                            <Link
-                              href={link.href}
-                              onClick={() => setActiveDropdown(null)}
-                              className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
-                            >
-                              {link.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-sm text-[#003580] mb-3 border-b border-gray-200 pb-2">
-                        {government.government.title}
-                      </h3>
-                      <ul className="space-y-2">
-                        {government.government.links.map((link) => (
-                          <li key={link.name}>
-                            <Link
-                              href={link.href}
-                              onClick={() => setActiveDropdown(null)}
-                              className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
-                            >
-                              {link.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            )}
-
-            {activeDropdown === "useful" && (
-              <div className="absolute left-0 top-full w-full bg-white border-t border-gray-200 shadow-lg z-50">
-                <div className="max-w-7xl mx-auto px-4 py-6">
-                  <div className="grid grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="font-semibold text-sm text-[#003580] mb-3 border-b border-gray-200 pb-2">
-                        {useful.title}
-                      </h3>
-                      <ul className="space-y-2">
-                        {useful.sites.map((site) => (
-                          <li key={site.name}>
-                            <a
-                              href={site.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={() => setActiveDropdown(null)}
-                              className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
-                            >
-                              <span className="font-medium">{site.name}</span>
-                              <span className="block text-xs text-gray-500">{site.desc}</span>
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-sm text-[#003580] mb-3 border-b border-gray-200 pb-2">
-                        {isFrench ? "Par sujet" : "By topic"}
-                      </h3>
-                      <ul className="grid grid-cols-2 gap-2">
-                        {useful.subjects.map((subject) => (
-                          <li key={subject.name}>
-                            <Link
-                              href={subject.href}
-                              onClick={() => setActiveDropdown(null)}
-                              className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
-                            >
-                              {subject.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                      <Link
-                        href={useful.allSites.href}
-                        onClick={() => setActiveDropdown(null)}
-                        className="inline-block text-sm text-[#003580] hover:underline mt-3"
-                      >
-                        {useful.allSites.name}
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </nav>
         </div>
       </div>
