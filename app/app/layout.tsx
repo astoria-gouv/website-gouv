@@ -18,15 +18,15 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Aether Bank",
-    default: "Aether Bank - La banque de demain, disponible dès aujourd'hui",
+    template: "%s | Astoria Govnerment",
+    default: "Astoria Govnerment - The Official Government of Astoria",
   },
   description:
-    "Ouvrez votre compte bancaire chez Aether Bank. Carte gratuite, épargne avantageuse, application mobile et sécurité maximale. Banking the future, today.",
+    "The Official Government of Astoria.",
   icons: {
     icon: [
       {
-        url: "/favicon.ico",
+        url: "/astoria-flag.png",
       },
     ],
   },

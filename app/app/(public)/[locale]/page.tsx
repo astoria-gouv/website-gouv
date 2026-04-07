@@ -4,7 +4,6 @@ import { Header } from "@/components/public/Header";
 import { Footer } from "@/components/public/Footer";
 import { Button } from "@/components/ui/button";
 
-
 export default function PublicLayout({
   children,
 }: {
