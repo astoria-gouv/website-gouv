@@ -1,5 +1,5 @@
 {
-  "name": "@aether-registry/app",
+  "name": "@website-gouv/app",
   "version": "1.0.0",
   "description": "Frontend application for Aether Registry",
   "type": "module",

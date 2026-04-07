@@ -1,7 +1,7 @@
 {
-  "name": "aether-registry",
+  "name": "website-gouv",
   "version": "1.0.0",
-  "description": "The Official Registry Service for Sky Genesis Enterprise Package Ecosystem",
+  "description": "Official Government Website source code",
   "private": true,
   "type": "module",
   "workspaces": [
@@ -70,7 +70,7 @@
   "packageManager": "pnpm@8.15.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/skygenesisenterprise/aether-registry.git"
+    "url": "https://github.com/astoria-gouv/website-gouv.git"
   },
   "keywords": [
     "news",
@@ -82,14 +82,14 @@
   ],
   "author": {
     "name": "Sky Genesis Enterprise",
-    "email": "developer@skygenesisenterprise.com",
-    "url": "https://skygenesisenterprise.com"
+    "email": "developer@info.gov.aor",
+    "url": "https://info.gov.aor"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/skygenesisenterprise/aether-registry/issues"
+    "url": "https://github.com/astoria-gouv/website-gouv/issues"
   },
-  "homepage": "https://github.com/skygenesisenterprise/aether-registry#readme",
+  "homepage": "https://github.com/astoria-gouv/website-gouv#readme",
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix --quiet",
