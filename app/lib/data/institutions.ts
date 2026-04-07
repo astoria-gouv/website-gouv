@@ -11,9 +11,9 @@ export interface Institution {
 export const institutions: Institution[] = [
   {
     icon: Users,
-    title: "Le Premier ministre",
-    titleEn: "The Prime Minister",
-    href: "/government/prime-minister",
+    title: "Le Président",
+    titleEn: "The President",
+    href: "/government/president",
   },
   {
     icon: Users,
@@ -23,15 +23,15 @@ export const institutions: Institution[] = [
   },
   {
     icon: Mail,
-    title: "Écrire au Premier ministre",
-    titleEn: "Write to the Prime Minister",
-    href: "/contact",
+    title: "Écrire au Président",
+    titleEn: "Write to the President",
+    href: "/government/president/contact",
   },
   {
     icon: Building,
-    title: "Services du Premier ministre",
-    titleEn: "Services of the Prime Minister",
-    href: "/government/services",
+    title: "Services du Président",
+    titleEn: "Services of the President",
+    href: "/government/president/services",
   },
   {
     icon: Scale,

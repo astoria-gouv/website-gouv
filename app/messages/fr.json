@@ -34,7 +34,7 @@
     "language": "Langue"
   },
   "DomainInfo": {
-    "securityMessage": "Pour votre sécurité, tous les sites officiels du gouvernement sont sous le domaine *.gouv.aor. Vérifiez toujours l'URL avant de partager vos informations."
+    "securityMessage": "Pour votre sécurité, tous les sites officiels du gouvernement sont sous le domaine *.gov.aor. Vérifiez toujours l'URL avant de partager vos informations."
   },
   "Footer": {
     "addressLine1": "Rue du Gouvernement, 1",

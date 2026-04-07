@@ -24,20 +24,19 @@ const footerLinks = {
     institutions: {
       title: "Gouvernement et institutions",
       links: [
-        { name: "Actualités du Premier ministre", href: "/fr/government/prime-minister/news" },
-        { name: "Agenda du Premier ministre", href: "/fr/government/prime-minister/agenda" },
+        { name: "Actualités du Président", href: "/fr/government/president/news" },
         { name: "Composition du Gouvernement", href: "/fr/government/composition" },
         { name: "Conseil des ministers", href: "/fr/government/council" },
         { name: "Espace presse", href: "/fr/government/press" },
         { name: "Discours et rapports", href: "/fr/government/speeches" },
-        { name: "Écrire au Premier ministre", href: "/fr/contact" },
+        { name: "Écrire au Président", href: "/fr/contact" },
         { name: "Patrimoine", href: "/fr/government/heritage" },
       ],
     },
     services: {
-      title: "Services du Premier ministre",
+      title: "Services du Président",
       links: [
-        { name: "Agenda du Premier ministre", href: "/fr/government/prime-minister/agenda" },
+        { name: "Agenda du Président", href: "/fr/government/president/agenda" },
         { name: "Politiques prioritaires", href: "/fr/priorities" },
         { name: "Plein emploi et réindustrialisation", href: "/fr/priorities/employment" },
         { name: "Progrès et services publics", href: "/fr/priorities/public-services" },
@@ -264,30 +263,30 @@ export function Footer() {
               </span>
               <div className="flex flex-wrap gap-x-6 gap-y-2 justify-end">
                 <Link
-                  href="https://legislation.gouv.aor"
+                  href="https://legislation.gov.aor"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1 text-sm text-gray-600 hover:text-[#003580] transition-colors"
                 >
-                  legislation.gouv.aor
+                  legislation.gov.aor
                   <ExternalLink className="h-3 w-3" />
                 </Link>
                 <Link
-                  href="https://service-public.gouv.aor"
+                  href="https://service-public.gov.aor"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1 text-sm text-gray-600 hover:text-[#003580] transition-colors"
                 >
-                  service-public.gouv.aor
+                  service-public.gov.aor
                   <ExternalLink className="h-3 w-3" />
                 </Link>
                 <Link
-                  href="https://data.gouv.aor"
+                  href="https://data.gov.aor"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1 text-sm text-gray-600 hover:text-[#003580] transition-colors"
                 >
-                  data.gouv.aor
+                  data.gov.aor
                   <ExternalLink className="h-3 w-3" />
                 </Link>
               </div>
@@ -348,7 +347,7 @@ export function Footer() {
                 ? "Sauf mention contraire, tous les contenus de ce site sont sous licence "
                 : "Unless otherwise stated, all content on this site is under license "}
               <Link
-                href="https://licences.etalab.gouv.fr"
+                href="https://github.com/etalab/licence-ouverte/blob/master/LO.md"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-[#003580]"

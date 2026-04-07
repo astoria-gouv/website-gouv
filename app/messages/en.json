@@ -34,7 +34,7 @@
     "language": "Language"
   },
   "DomainInfo": {
-    "securityMessage": "For your safety, all official government sites are under the domain *.gouv.aor. Always check the URL before sharing your information."
+    "securityMessage": "For your safety, all official government sites are under the domain *.gov.aor. Always check the URL before sharing your information."
   },
   "Footer": {
     "addressLine1": "Government Street, 1",

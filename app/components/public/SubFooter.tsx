@@ -158,8 +158,8 @@ export function SubFooter() {
             </h3>
             <p className="text-sm text-gray-600 mb-4">
               {isFrench
-                ? "Recevez régulièrement les actualités de info.gouv.aor, directement dans votre boîte de réception."
-                : "Receive regular updates from info.gouv.aor directly in your inbox."}
+                ? "Recevez régulièrement les actualités de info.gov.aor, directement dans votre boîte de réception."
+                : "Receive regular updates from info.gov.aor directly in your inbox."}
             </p>
             <Button className="bg-[#0055A4] hover:bg-[#004080] text-white">
               <Mail className="h-4 w-4 mr-2" />

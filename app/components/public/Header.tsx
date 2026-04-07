@@ -138,31 +138,98 @@ const risksLinks = {
 };
 
 const governmentLinks = {
-  fr: [
-    { name: "Actualités du Premier ministre", href: "/fr/government/prime-minister/news" },
-    { name: "Composition du Gouvernement", href: "/fr/government/composition" },
-    { name: "Conseil des ministers", href: "/fr/government/council" },
-    { name: "Espace presse", href: "/fr/government/press" },
-  ],
-  en: [
-    { name: "Prime Minister's news", href: "/en/government/prime-minister/news" },
-    { name: "Government composition", href: "/en/government/composition" },
-    { name: "Council of Ministers", href: "/en/government/council" },
-    { name: "Press area", href: "/en/government/press" },
-  ],
+  fr: {
+    primeMinister: {
+      title: "Le Président",
+      name: "Liam Von Astoria",
+      href: "/fr/government/president",
+      links: [
+        { name: "Actualité du Président", href: "/fr/government/president/news" },
+        { name: "Agenda du Président", href: "/fr/government/president/agenda" },
+        { name: "Discours et rapports", href: "/fr/government/president/speeches" },
+        { name: "Écrire au Président", href: "/fr/government/president/contact" },
+      ],
+    },
+    government: {
+      title: "Le Gouvernement",
+      links: [
+        { name: "Composition du Gouvernement", href: "/fr/government/composition" },
+        { name: "Conseil des ministre", href: "/fr/government/council" },
+        { name: "Ministères", href: "/fr/government/ministries" },
+        { name: "Services du Président", href: "/fr/government/services" },
+        { name: "Patrimoine", href: "/fr/government/heritage" },
+      ],
+    },
+  },
+  en: {
+    primeMinister: {
+      title: "The President",
+      name: "Liam Von Astoria",
+      href: "/en/government/president",
+      links: [
+        { name: "President's news", href: "/en/government/president/news" },
+        { name: "President's agenda", href: "/en/government/president/agenda" },
+        { name: "Speeches and reports", href: "/en/government/president/speeches" },
+        { name: "Write to the President", href: "/en/government/president/contact" },
+      ],
+    },
+    government: {
+      title: "The Government",
+      links: [
+        { name: "Government composition", href: "/en/government/composition" },
+        { name: "Council of Ministers", href: "/en/government/council" },
+        { name: "Ministries", href: "/en/government/ministries" },
+        { name: "Prime Minister's services", href: "/en/government/services" },
+        { name: "Heritage", href: "/en/government/heritage" },
+        { name: "Former Prime Ministers", href: "/en/government/former-pm" },
+      ],
+    },
+  },
 };
 
 const usefulLinks = {
-  fr: [
-    { name: "legifrance.gouv.aor", href: "https://legifrance.gouv.aor" },
-    { name: "service-public.gouv.aor", href: "https://service-public.gouv.aor" },
-    { name: "data.gouv.aor", href: "https://data.gouv.aor" },
-  ],
-  en: [
-    { name: "legifrance.gouv.aor", href: "https://legifrance.gouv.aor" },
-    { name: "service-public.gouv.aor", href: "https://service-public.gouv.aor" },
-    { name: "data.gouv.aor", href: "https://data.gouv.aor" },
-  ],
+  fr: {
+    title: "Sites officiels à connaître",
+    sites: [
+      {
+        name: "service-public.gov.aor",
+        desc: "Pour les formalités administratives",
+        href: "https://service-public.gov.aor",
+      },
+      { name: "impots.gov.aor", desc: "Pour les impôts", href: "https://impots.gov.aor" },
+      { name: "ameli.gov.aor", desc: "Pour l'Assurance maladie", href: "https://ameli.gov.aor" },
+    ],
+    subjects: [
+      { name: "Vie quotidienne", href: "/fr/useful-links/daily-life" },
+      { name: "Santé", href: "/fr/useful-links/health" },
+      { name: "Emploi", href: "/fr/useful-links/employment" },
+      { name: "Jeunes", href: "/fr/useful-links/youth" },
+      { name: "International", href: "/fr/useful-links/international" },
+      { name: "Seniors", href: "/fr/useful-links/seniors" },
+    ],
+    allSites: { name: "Tous les sites utiles par sujet", href: "/fr/useful-links" },
+  },
+  en: {
+    title: "Official sites to know",
+    sites: [
+      {
+        name: "service-public.gov.aor",
+        desc: "For administrative procedures",
+        href: "https://service-public.gov.aor",
+      },
+      { name: "impots.gov.aor", desc: "For taxes", href: "https://impots.gov.aor" },
+      { name: "ameli.gov.aor", desc: "For Health Insurance", href: "https://ameli.gov.aor" },
+    ],
+    subjects: [
+      { name: "Daily life", href: "/en/useful-links/daily-life" },
+      { name: "Health", href: "/en/useful-links/health" },
+      { name: "Employment", href: "/en/useful-links/employment" },
+      { name: "Youth", href: "/en/useful-links/youth" },
+      { name: "International", href: "/en/useful-links/international" },
+      { name: "Seniors", href: "/en/useful-links/seniors" },
+    ],
+    allSites: { name: "All useful sites by topic", href: "/en/useful-links" },
+  },
 };
 
 export function Header() {
@@ -201,7 +268,7 @@ export function Header() {
               />
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-[#003580] leading-tight">Gouvernement</span>
-                <span className="text-xs text-gray-500 leading-tight">info.gouv.aor</span>
+                <span className="text-xs text-gray-500 leading-tight">info.gov.aor</span>
               </div>
             </Link>
             <span className="hidden lg:block text-sm text-gray-500 border-l border-gray-300 pl-4">
@@ -264,7 +331,7 @@ export function Header() {
               <Input
                 type="text"
                 placeholder={
-                  isFrench ? "Rechercher sur info.gouv.aor..." : "Search on info.gouv.aor..."
+                  isFrench ? "Rechercher sur info.gov.aor..." : "Search on info.gov.aor..."
                 }
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -430,19 +497,51 @@ export function Header() {
             {activeDropdown === "government" && (
               <div className="absolute left-0 top-full w-full bg-white border-t border-gray-200 shadow-lg z-50">
                 <div className="max-w-7xl mx-auto px-4 py-6">
-                  <ul className="grid grid-cols-4 gap-4">
-                    {government.map((link) => (
-                      <li key={link.name}>
-                        <Link
-                          href={link.href}
-                          onClick={() => setActiveDropdown(null)}
-                          className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
-                        >
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="grid grid-cols-2 gap-8">
+                    <div>
+                      <h3 className="font-semibold text-sm text-[#003580] mb-3 border-b border-gray-200 pb-2">
+                        {government.primeMinister.title}
+                      </h3>
+                      <Link
+                        href={government.primeMinister.href}
+                        onClick={() => setActiveDropdown(null)}
+                        className="block text-sm text-gray-700 hover:text-[#003580] transition-colors mb-2"
+                      >
+                        {government.primeMinister.name}
+                      </Link>
+                      <ul className="space-y-2">
+                        {government.primeMinister.links.map((link) => (
+                          <li key={link.name}>
+                            <Link
+                              href={link.href}
+                              onClick={() => setActiveDropdown(null)}
+                              className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
+                            >
+                              {link.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-sm text-[#003580] mb-3 border-b border-gray-200 pb-2">
+                        {government.government.title}
+                      </h3>
+                      <ul className="space-y-2">
+                        {government.government.links.map((link) => (
+                          <li key={link.name}>
+                            <Link
+                              href={link.href}
+                              onClick={() => setActiveDropdown(null)}
+                              className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
+                            >
+                              {link.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
@@ -450,21 +549,54 @@ export function Header() {
             {activeDropdown === "useful" && (
               <div className="absolute left-0 top-full w-full bg-white border-t border-gray-200 shadow-lg z-50">
                 <div className="max-w-7xl mx-auto px-4 py-6">
-                  <ul className="grid grid-cols-4 gap-4">
-                    {useful.map((link) => (
-                      <li key={link.name}>
-                        <a
-                          href={link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={() => setActiveDropdown(null)}
-                          className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
-                        >
-                          {link.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="grid grid-cols-2 gap-8">
+                    <div>
+                      <h3 className="font-semibold text-sm text-[#003580] mb-3 border-b border-gray-200 pb-2">
+                        {useful.title}
+                      </h3>
+                      <ul className="space-y-2">
+                        {useful.sites.map((site) => (
+                          <li key={site.name}>
+                            <a
+                              href={site.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={() => setActiveDropdown(null)}
+                              className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
+                            >
+                              <span className="font-medium">{site.name}</span>
+                              <span className="block text-xs text-gray-500">{site.desc}</span>
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-sm text-[#003580] mb-3 border-b border-gray-200 pb-2">
+                        {isFrench ? "Par sujet" : "By topic"}
+                      </h3>
+                      <ul className="grid grid-cols-2 gap-2">
+                        {useful.subjects.map((subject) => (
+                          <li key={subject.name}>
+                            <Link
+                              href={subject.href}
+                              onClick={() => setActiveDropdown(null)}
+                              className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
+                            >
+                              {subject.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                      <Link
+                        href={useful.allSites.href}
+                        onClick={() => setActiveDropdown(null)}
+                        className="inline-block text-sm text-[#003580] hover:underline mt-3"
+                      >
+                        {useful.allSites.name}
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
@@ -514,16 +646,43 @@ export function Header() {
               <p className="px-3 py-2 text-xs text-gray-500 uppercase tracking-wide">
                 {isFrench ? "Le Gouvernement" : "The Government"}
               </p>
-              {government.map((link) => (
+              <div className="px-3 py-2">
+                <p className="text-sm font-semibold text-[#003580]">
+                  {government.primeMinister.title}
+                </p>
                 <Link
-                  key={link.name}
-                  href={link.href}
-                  className="block px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-md"
+                  href={government.primeMinister.href}
+                  className="block pl-3 py-1 text-sm text-gray-700 hover:bg-gray-100 rounded-md"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {link.name}
+                  {government.primeMinister.name}
                 </Link>
-              ))}
+                {government.primeMinister.links.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="block pl-3 py-1 text-sm text-gray-600 hover:bg-gray-100 rounded-md"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+              <div className="px-3 py-2">
+                <p className="text-sm font-semibold text-[#003580]">
+                  {government.government.title}
+                </p>
+                {government.government.links.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="block pl-3 py-1 text-sm text-gray-600 hover:bg-gray-100 rounded-md"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
             </div>
           </nav>
         </div>
