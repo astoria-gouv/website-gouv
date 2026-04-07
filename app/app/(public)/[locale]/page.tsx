@@ -16,6 +16,7 @@ import {
   LocalSearchSection,
   PrioritiesSection,
   InstitutionsSection,
+  PopularServices,
 } from "@/components/home";
 
 export default function HomePage() {
@@ -29,6 +30,7 @@ export default function HomePage() {
       <main className="flex-1 bg-white">
         <Hero />
         <NewsSection />
+        <PopularServices />
         <VideosSection />
         <MentalHealthBanner />
         <EditorialSection />

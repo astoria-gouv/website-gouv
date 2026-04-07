@@ -94,20 +94,20 @@ const footerLinks = {
     institutions: {
       title: "Government and institutions",
       links: [
-        { name: "Prime Minister's news", href: "/en/government/prime-minister/news" },
-        { name: "Prime Minister's agenda", href: "/en/government/prime-minister/agenda" },
+        { name: "President's news", href: "/en/government/prime-minister/news" },
+        { name: "President's agenda", href: "/en/government/prime-minister/agenda" },
         { name: "Government composition", href: "/en/government/composition" },
         { name: "Council of Ministers", href: "/en/government/council" },
         { name: "Press area", href: "/en/government/press" },
         { name: "Speeches and reports", href: "/en/government/speeches" },
-        { name: "Write to the Prime Minister", href: "/en/contact" },
+        { name: "Write to the President", href: "/en/contact" },
         { name: "Heritage", href: "/en/government/heritage" },
       ],
     },
     services: {
-      title: "Prime Minister's services",
+      title: "President's services",
       links: [
-        { name: "Prime Minister's agenda", href: "/en/government/prime-minister/agenda" },
+        { name: "President's agenda", href: "/en/government/prime-minister/agenda" },
         { name: "Priority policies", href: "/en/priorities" },
         { name: "Full employment and reindustrialization", href: "/en/priorities/employment" },
         { name: "Progress and public services", href: "/en/priorities/public-services" },
@@ -249,11 +249,13 @@ export function Footer() {
             <Link href={`/${currentLocale}`} className="flex items-center gap-3">
               <img
                 src="/images/astoria-government-logo-font.png"
-                alt="Gouvernement"
+                alt={isFrench ? "Gouvernement" : "Government"}
                 className="h-12 w-auto"
               />
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-[#003580] leading-tight">Gouvernement</span>
+                <span className="text-lg font-bold text-[#003580] leading-tight">
+                  {isFrench ? "Gouvernement d'Astoria" : "Government of Astoria"}
+                </span>
                 <span className="text-xs text-gray-500 leading-tight">info.gov.aor</span>
               </div>
             </Link>
@@ -268,7 +270,7 @@ export function Footer() {
                 >
                   {isFrench
                     ? "Service d'Information du Gouvernement (SIG)"
-                    : "Government Information Service"}
+                    : "Government Information Service (SIG)"}
                 </Link>
                 .
               </span>
@@ -314,49 +316,51 @@ export function Footer() {
                 href={`/${currentLocale}/sitemap`}
                 className="text-sm text-gray-600 hover:text-[#003580] transition-colors"
               >
-                Plan du site
+                {isFrench ? "Plan du site" : "Sitemap"}
               </Link>
               <span className="text-gray-400">|</span>
               <Link
                 href={`/${currentLocale}/accessibility`}
                 className="text-sm text-gray-600 hover:text-[#003580] transition-colors"
               >
-                Accessibilité : totalement conforme
+                {isFrench
+                  ? "Accessibilité : totalement conforme"
+                  : "Accessibility: fully compliant"}
               </Link>
               <span className="text-gray-400">|</span>
               <Link
                 href={`/${currentLocale}/legal/terms`}
                 className="text-sm text-gray-600 hover:text-[#003580] transition-colors"
               >
-                Mentions légales
+                {isFrench ? "Mentions légales" : "Legal notice"}
               </Link>
               <span className="text-gray-400">|</span>
               <Link
                 href={`/${currentLocale}/legal/privacy`}
                 className="text-sm text-gray-600 hover:text-[#003580] transition-colors"
               >
-                Données personnelles
+                {isFrench ? "Données personnelles" : "Personal data"}
               </Link>
               <span className="text-gray-400">|</span>
               <Link
                 href={`/${currentLocale}/legal/cookies`}
                 className="text-sm text-gray-600 hover:text-[#003580] transition-colors"
               >
-                Gestion des cookies
+                {isFrench ? "Gestion des cookies" : "Cookie management"}
               </Link>
               <span className="text-gray-400">|</span>
               <Link
                 href={`/${currentLocale}/notifications`}
                 className="text-sm text-gray-600 hover:text-[#003580] transition-colors"
               >
-                Notifications
+                {isFrench ? "Notifications" : "Notifications"}
               </Link>
               <span className="text-gray-400">|</span>
               <Link
                 href={`/${currentLocale}/publications`}
                 className="text-sm text-gray-600 hover:text-[#003580] transition-colors"
               >
-                Publications officielles
+                {isFrench ? "Publications officielles" : "Official publications"}
               </Link>
             </div>
             <div className="text-sm text-gray-600">

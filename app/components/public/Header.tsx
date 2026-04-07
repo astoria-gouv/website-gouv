@@ -6,7 +6,7 @@ import { useLocale } from "@/context/locale-context";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import { Menu, X, Search, Settings, ChevronDown } from "lucide-react";
+import { Menu, X, Search, Settings, ChevronDown, LogIn } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const dropdownVariants = {
@@ -22,43 +22,43 @@ const aLaUneContent = {
       {
         title: "L'actualité",
         links: [
-          { name: "Ce qui change", href: "/fr/news/what-changing" },
-          { name: "Vos questions, nos réponses", href: "/fr/news/questions-answers" },
-          { name: "Toute l'actualité", href: "/fr/news" },
+          { name: "Ce qui change", href: "/[locale]/news/what-changing" },
+          { name: "Vos questions, nos réponses", href: "/[locale]/news/questions-answers" },
+          { name: "Toute l'actualité", href: "/[locale]/news" },
         ],
       },
       {
         title: "Médias",
         links: [
-          { name: "Podcasts", href: "/fr/news/podcasts" },
-          { name: "Articles audio", href: "/fr/news/audio-article" },
-          { name: "Newsletters", href: "/fr/newsletter" },
-          { name: "Vidéos", href: "/fr/videos" },
+          { name: "Podcasts", href: "/[locale]/news/podcasts" },
+          { name: "Articles audio", href: "/[locale]/news/audio-article" },
+          { name: "Newsletters", href: "/[locale]/newsletter" },
+          { name: "Vidéos", href: "/[locale]/videos" },
         ],
       },
       {
         title: "Thématiques",
         links: [
-          { name: "Budget", href: "/fr/news/budget" },
-          { name: "Harcèlement à l'école", href: "/fr/topics/school-bullying" },
-          { name: "Laïcité", href: "/fr/topics/laicite" },
-          { name: "Narcotrafic", href: "/fr/topics/narcotrafic" },
-          { name: "Santé", href: "/fr/news/health" },
-          { name: "Handicap", href: "/fr/topics/disability" },
-          { name: "Recherche et innovation", href: "/fr/topics/research" },
-          { name: "Intelligence artificielle", href: "/fr/topics/ai" },
+          { name: "Budget", href: "/[locale]/news/budget" },
+          { name: "Harcèlement à l'école", href: "/[locale]/topics/school-bullying" },
+          { name: "Laïcité", href: "/[locale]/topics/laicite" },
+          { name: "Narcotrafic", href: "/[locale]/topics/narcotrafic" },
+          { name: "Santé", href: "/[locale]/news/health" },
+          { name: "Handicap", href: "/[locale]/topics/disability" },
+          { name: "Recherche et innovation", href: "/[locale]/topics/research" },
+          { name: "Intelligence artificielle", href: "/[locale]/topics/ai" },
         ],
       },
       {
         title: "Grands dossiers",
         links: [
-          { name: "Parlons santé mentale !", href: "/fr/health/mental-health" },
-          { name: "La France en grand angle", href: "/fr/major-feature" },
-          { name: "France 2030", href: "/fr/france-2030" },
-          { name: "Toutes et tous égaux", href: "/fr/major-feature/equality-for-all" },
-          { name: "France Nation verte", href: "/fr/major-feature/green-nation" },
-          { name: "Maisons France services", href: "/fr/services/france-services" },
-          { name: "Tous les grands dossiers", href: "/fr/major-feature" },
+          { name: "Parlons santé mentale !", href: "/[locale]/health/mental-health" },
+          { name: "La France en grand angle", href: "/[locale]/major-feature" },
+          { name: "France 2030", href: "/[locale]/france-2030" },
+          { name: "Toutes et tous égaux", href: "/[locale]/major-feature/equality-for-all" },
+          { name: "France Nation verte", href: "/[locale]/major-feature/green-nation" },
+          { name: "Maisons France services", href: "/[locale]/services/france-services" },
+          { name: "Tous les grands dossiers", href: "/[locale]/major-feature" },
         ],
       },
     ],
@@ -69,43 +69,43 @@ const aLaUneContent = {
       {
         title: "News",
         links: [
-          { name: "What changes", href: "/en/news/what-changing" },
-          { name: "Your questions, our answers", href: "/en/news/questions-answers" },
-          { name: "All news", href: "/en/news" },
+          { name: "What changes", href: "/[locale]/news/what-changing" },
+          { name: "Your questions, our answers", href: "/[locale]/news/questions-answers" },
+          { name: "All news", href: "/[locale]/news" },
         ],
       },
       {
         title: "Media",
         links: [
-          { name: "Podcasts", href: "/en/news/podcasts" },
-          { name: "Audio articles", href: "/en/news/audio-article" },
-          { name: "Newsletters", href: "/en/newsletter" },
-          { name: "Videos", href: "/en/videos" },
+          { name: "Podcasts", href: "/[locale]/news/podcasts" },
+          { name: "Audio articles", href: "/[locale]/news/audio-article" },
+          { name: "Newsletters", href: "/[locale]/newsletter" },
+          { name: "Videos", href: "/[locale]/videos" },
         ],
       },
       {
         title: "Topics",
         links: [
-          { name: "Budget", href: "/en/news/budget" },
-          { name: "School bullying", href: "/en/topics/school-bullying" },
-          { name: "Secularism", href: "/en/topics/laicite" },
-          { name: "Drug trafficking", href: "/en/topics/narcotrafic" },
-          { name: "Health", href: "/en/news/health" },
-          { name: "Disability", href: "/en/topics/disability" },
-          { name: "Research and innovation", href: "/en/topics/research" },
-          { name: "Artificial intelligence", href: "/en/topics/ai" },
+          { name: "Budget", href: "/[locale]/news/budget" },
+          { name: "School bullying", href: "/[locale]/topics/school-bullying" },
+          { name: "Secularism", href: "/[locale]/topics/laicite" },
+          { name: "Drug trafficking", href: "/[locale]/topics/narcotrafic" },
+          { name: "Health", href: "/[locale]/news/health" },
+          { name: "Disability", href: "/[locale]/topics/disability" },
+          { name: "Research and innovation", href: "/[locale]/topics/research" },
+          { name: "Artificial intelligence", href: "/[locale]/topics/ai" },
         ],
       },
       {
         title: "Major files",
         links: [
-          { name: "Let's talk about mental health!", href: "/en/health/mental-health" },
-          { name: "France in wide angle", href: "/en/major-feature" },
-          { name: "France 2030", href: "/en/france-2030" },
-          { name: "All equal", href: "/en/major-feature/equality-for-all" },
-          { name: "Green Nation", href: "/en/major-feature/green-nation" },
-          { name: "France Services", href: "/en/services/france-services" },
-          { name: "All major files", href: "/en/major-feature" },
+          { name: "Let's talk about mental health!", href: "/[locale]/health/mental-health" },
+          { name: "France in wide angle", href: "/[locale]/major-feature" },
+          { name: "France 2030", href: "/[locale]/france-2030" },
+          { name: "All equal", href: "/[locale]/major-feature/equality-for-all" },
+          { name: "Green Nation", href: "/[locale]/major-feature/green-nation" },
+          { name: "France Services", href: "/[locale]/services/france-services" },
+          { name: "All major files", href: "/[locale]/major-feature" },
         ],
       },
     ],
@@ -114,33 +114,33 @@ const aLaUneContent = {
 
 const policiesLinks = {
   fr: [
-    { name: "Plein emploi et réindustrialisation", href: "/fr/priorities/employment" },
-    { name: "Progrès et services publics", href: "/fr/priorities/public-services" },
-    { name: "Transition écologique", href: "/fr/priorities/ecology" },
-    { name: "Ordre républicain", href: "/fr/priorities/republican-order" },
+    { name: "Plein emploi et réindustrialisation", href: "/[locale]/priorities/employment" },
+    { name: "Progrès et services publics", href: "/[locale]/priorities/public-services" },
+    { name: "Transition écologique", href: "/[locale]/priorities/ecology" },
+    { name: "Ordre républicain", href: "/[locale]/priorities/republican-order" },
   ],
   en: [
-    { name: "Full employment and reindustrialization", href: "/en/priorities/employment" },
-    { name: "Progress and public services", href: "/en/priorities/public-services" },
-    { name: "Ecological transition", href: "/en/priorities/ecology" },
-    { name: "Republican order", href: "/en/priorities/republican-order" },
+    { name: "Full employment and reindustrialization", href: "/[locale]/priorities/employment" },
+    { name: "Progress and public services", href: "/[locale]/priorities/public-services" },
+    { name: "Ecological transition", href: "/[locale]/priorities/ecology" },
+    { name: "Republican order", href: "/[locale]/priorities/republican-order" },
   ],
 };
 
 const risksLinks = {
   fr: [
-    { name: "Se préparer à une situation d'urgence", href: "/fr/emergency/preparedness" },
-    { name: "Risques naturels et technologiques", href: "/fr/emergency/natural-risks" },
-    { name: "Risques épidémiques", href: "/fr/emergency/epidemic-risks" },
-    { name: "Menace terrorist", href: "/fr/emergency/terrorism" },
-    { name: "Menace cyber", href: "/fr/emergency/cyber" },
+    { name: "Se préparer à une situation d'urgence", href: "/[locale]/emergency/preparedness" },
+    { name: "Risques naturels et technologiques", href: "/[locale]/emergency/natural-risks" },
+    { name: "Risques épidémiques", href: "/[locale]/emergency/epidemic-risks" },
+    { name: "Menace terrorist", href: "/[locale]/emergency/terrorism" },
+    { name: "Menace cyber", href: "/[locale]/emergency/cyber" },
   ],
   en: [
-    { name: "Preparing for an emergency", href: "/en/emergency/preparedness" },
-    { name: "Natural and technological risks", href: "/en/emergency/natural-risks" },
-    { name: "Epidemic risks", href: "/en/emergency/epidemic-risks" },
-    { name: "Terrorist threat", href: "/en/emergency/terrorism" },
-    { name: "Cyber threat", href: "/en/emergency/cyber" },
+    { name: "Preparing for an emergency", href: "/[locale]/emergency/preparedness" },
+    { name: "Natural and technological risks", href: "/[locale]/emergency/natural-risks" },
+    { name: "Epidemic risks", href: "/[locale]/emergency/epidemic-risks" },
+    { name: "Terrorist threat", href: "/[locale]/emergency/terrorism" },
+    { name: "Cyber threat", href: "/[locale]/emergency/cyber" },
   ],
 };
 
@@ -149,22 +149,22 @@ const governmentLinks = {
     primeMinister: {
       title: "Le Président",
       name: "Liam Von Astoria",
-      href: "/fr/government/president",
+      href: "/[locale]/government/president",
       links: [
-        { name: "Actualité du Président", href: "/fr/government/president/news" },
-        { name: "Agenda du Président", href: "/fr/government/president/agenda" },
-        { name: "Discours et rapports", href: "/fr/government/president/speeches" },
-        { name: "Écrire au Président", href: "/fr/government/president/contact" },
+        { name: "Actualité du Président", href: "/[locale]/government/president/news" },
+        { name: "Agenda du Président", href: "/[locale]/government/president/agenda" },
+        { name: "Discours et rapports", href: "/[locale]/government/president/speeches" },
+        { name: "Écrire au Président", href: "/[locale]/government/president/contact" },
       ],
     },
     government: {
       title: "Le Gouvernement",
       links: [
-        { name: "Composition du Gouvernement", href: "/fr/government/composition" },
-        { name: "Conseil des ministre", href: "/fr/government/composition/council" },
-        { name: "Ministères", href: "/fr/government/composition/ministries" },
-        { name: "Services du Président", href: "/fr/government/services" },
-        { name: "Patrimoine", href: "/fr/government/heritage" },
+        { name: "Composition du Gouvernement", href: "/[locale]/government/composition" },
+        { name: "Conseil des ministre", href: "/[locale]/government/composition/council" },
+        { name: "Ministères", href: "/[locale]/government/composition/ministries" },
+        { name: "Services du Président", href: "/[locale]/government/services" },
+        { name: "Patrimoine", href: "/[locale]/government/heritage" },
       ],
     },
   },
@@ -172,23 +172,22 @@ const governmentLinks = {
     primeMinister: {
       title: "The President",
       name: "Liam Von Astoria",
-      href: "/en/government/president",
+      href: "/[locale]/government/president",
       links: [
-        { name: "President's news", href: "/en/government/president/news" },
-        { name: "President's agenda", href: "/en/government/president/agenda" },
-        { name: "Speeches and reports", href: "/en/government/president/speeches" },
-        { name: "Write to the President", href: "/en/government/president/contact" },
+        { name: "President's news", href: "/[locale]/government/president/news" },
+        { name: "President's agenda", href: "/[locale]/government/president/agenda" },
+        { name: "Speeches and reports", href: "/[locale]/government/president/speeches" },
+        { name: "Write to the President", href: "/[locale]/government/president/contact" },
       ],
     },
     government: {
       title: "The Government",
       links: [
-        { name: "Government composition", href: "/en/government/composition" },
-        { name: "Council of Ministers", href: "/en/government/council" },
-        { name: "Ministries", href: "/en/government/ministries" },
-        { name: "Prime Minister's services", href: "/en/government/services" },
-        { name: "Heritage", href: "/en/government/heritage" },
-        { name: "Former Prime Ministers", href: "/en/government/former-pm" },
+        { name: "Government composition", href: "/[locale]/government/composition" },
+        { name: "Council of Ministers", href: "/[locale]/government/composition/council" },
+        { name: "Ministries", href: "/[locale]/government/composition/ministries" },
+        { name: "Prime Minister's services", href: "/[locale]/government/services" },
+        { name: "Heritage", href: "/[locale]/government/heritage" },
       ],
     },
   },
@@ -207,14 +206,14 @@ const usefulLinks = {
       { name: "ameli.gov.aor", desc: "Pour l'Assurance maladie", href: "https://ameli.gov.aor" },
     ],
     subjects: [
-      { name: "Vie quotidienne", href: "/fr/useful-links/daily-life" },
-      { name: "Santé", href: "/fr/useful-links/health" },
-      { name: "Emploi", href: "/fr/useful-links/employment" },
-      { name: "Jeunes", href: "/fr/useful-links/youth" },
-      { name: "International", href: "/fr/useful-links/international" },
-      { name: "Seniors", href: "/fr/useful-links/seniors" },
+      { name: "Vie quotidienne", href: "/[locale]/useful-links/daily-life" },
+      { name: "Santé", href: "/[locale]/useful-links/health" },
+      { name: "Emploi", href: "/[locale]/useful-links/employment" },
+      { name: "Jeunes", href: "/[locale]/useful-links/youth" },
+      { name: "International", href: "/[locale]/useful-links/international" },
+      { name: "Seniors", href: "/[locale]/useful-links/seniors" },
     ],
-    allSites: { name: "Tous les sites utiles par sujet", href: "/fr/useful-links" },
+    allSites: { name: "Tous les sites utiles par sujet", href: "/[locale]/useful-links" },
   },
   en: {
     title: "Official sites to know",
@@ -228,16 +227,20 @@ const usefulLinks = {
       { name: "ameli.gov.aor", desc: "For Health Insurance", href: "https://ameli.gov.aor" },
     ],
     subjects: [
-      { name: "Daily life", href: "/en/useful-links/daily-life" },
-      { name: "Health", href: "/en/useful-links/health" },
-      { name: "Employment", href: "/en/useful-links/employment" },
-      { name: "Youth", href: "/en/useful-links/youth" },
-      { name: "International", href: "/en/useful-links/international" },
-      { name: "Seniors", href: "/en/useful-links/seniors" },
+      { name: "Daily life", href: "/[locale]/useful-links/daily-life" },
+      { name: "Health", href: "/[locale]/useful-links/health" },
+      { name: "Employment", href: "/[locale]/useful-links/employment" },
+      { name: "Youth", href: "/[locale]/useful-links/youth" },
+      { name: "International", href: "/[locale]/useful-links/international" },
+      { name: "Seniors", href: "/[locale]/useful-links/seniors" },
     ],
-    allSites: { name: "All useful sites by topic", href: "/en/useful-links" },
+    allSites: { name: "All useful sites by topic", href: "/[locale]/useful-links" },
   },
 };
+
+function resolveLocalePath(href: string, locale: string): string {
+  return href.replace(/\[locale\]/g, locale);
+}
 
 export function Header() {
   const locale = useLocale();
@@ -264,68 +267,50 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="flex h-16 items-center justify-between">
+      <div className="mx-auto max-w-7xl px-4 py-3">
+        <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Link href={`/${currentLocale}`} className="flex items-center gap-3">
               <img
                 src="/images/astoria-government-logo-font.png"
-                alt="Gouvernement"
+                alt={isFrench ? "Gouvernement d'Astoria" : "Government of Astoria"}
                 className="h-10 w-auto"
               />
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-[#003580] leading-tight">Gouvernement</span>
+                <span className="text-lg font-bold text-[#003580] leading-tight">
+                  {isFrench ? "Gouvernement d'Astoria" : "Government of Astoria"}
+                </span>
                 <span className="text-xs text-gray-500 leading-tight">info.gov.aor</span>
               </div>
             </Link>
             <span className="hidden lg:block text-sm text-gray-500 border-l border-gray-300 pl-4">
-              {isFrench ? "Le site officiel du Gouvernement" : "The official Government website"}
+              {isFrench ? "Le site officiel du Gouvernement d'Astoria" : "The official website of the Government of Astoria"}
             </span>
           </div>
 
-          <div className="flex items-center gap-2">
-            <Link
-              href={`/${currentLocale}/government/press`}
-              className="hidden md:inline-flex items-center px-3 py-1.5 text-sm text-[#003580] hover:bg-gray-100 rounded-md transition-colors"
-            >
-              {isFrench ? "Espace presse" : "Press area"}
-            </Link>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              className="text-gray-700 hover:bg-gray-100"
+          <div className="flex items-center gap-2 h-10">
+            <button
+              className="p-1.5 text-gray-700"
               onClick={() => setSearchOpen(!searchOpen)}
+              aria-label={isFrench ? "Rechercher" : "Search"}
             >
-              <Search className="h-5 w-5" />
-              <span className="sr-only">{isFrench ? "Rechercher" : "Search"}</span>
-            </Button>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              className="text-gray-700 hover:bg-gray-100 hidden md:flex"
-            >
-              <Settings className="h-5 w-5" />
-              <span className="sr-only">
-                {isFrench ? "Paramètres d'affichage" : "Display settings"}
-              </span>
-            </Button>
+              <Search className="h-4 w-4" />
+            </button>
 
             <Link
               href={isFrench ? "/en" : "/fr"}
-              className="px-3 py-1.5 text-sm text-[#003580] border border-[#003580] hover:bg-[#003580] hover:text-white rounded-md transition-colors"
+              className="px-2 py-1 text-sm text-[#003580] border border-[#003580] hover:bg-[#003580] hover:text-white rounded-md transition-colors"
             >
               {isFrench ? "EN" : "FR"}
             </Link>
 
-            <button
-              className="lg:hidden p-2 text-gray-700"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
+            <Link
+              href={`/login`}
+              className="inline-flex items-center gap-1.5 px-2 py-1 text-sm text-white bg-[#003580] hover:bg-[#002040] rounded-md transition-colors"
             >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+              <LogIn className="w-3.5 h-3.5" />
+              {isFrench ? "Connexion" : "Login"}
+            </Link>
           </div>
         </div>
       </div>
@@ -452,7 +437,7 @@ export function Header() {
                             {section.links.map((link) => (
                               <li key={link.name}>
                                 <Link
-                                  href={link.href}
+                                  href={resolveLocalePath(link.href, currentLocale)}
                                   onClick={() => setActiveDropdown(null)}
                                   className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
                                 >
@@ -481,7 +466,7 @@ export function Header() {
                       {policies.map((link) => (
                         <li key={link.name}>
                           <Link
-                            href={link.href}
+                            href={resolveLocalePath(link.href, currentLocale)}
                             onClick={() => setActiveDropdown(null)}
                             className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
                           >
@@ -507,7 +492,7 @@ export function Header() {
                       {risks.map((link) => (
                         <li key={link.name}>
                           <Link
-                            href={link.href}
+                            href={resolveLocalePath(link.href, currentLocale)}
                             onClick={() => setActiveDropdown(null)}
                             className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
                           >
@@ -535,7 +520,7 @@ export function Header() {
                           {government.primeMinister.title}
                         </h3>
                         <Link
-                          href={government.primeMinister.href}
+                          href={resolveLocalePath(government.primeMinister.href, currentLocale)}
                           onClick={() => setActiveDropdown(null)}
                           className="block text-sm text-gray-700 hover:text-[#003580] transition-colors mb-2"
                         >
@@ -545,7 +530,7 @@ export function Header() {
                           {government.primeMinister.links.map((link) => (
                             <li key={link.name}>
                               <Link
-                                href={link.href}
+                                href={resolveLocalePath(link.href, currentLocale)}
                                 onClick={() => setActiveDropdown(null)}
                                 className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
                               >
@@ -563,7 +548,7 @@ export function Header() {
                           {government.government.links.map((link) => (
                             <li key={link.name}>
                               <Link
-                                href={link.href}
+                                href={resolveLocalePath(link.href, currentLocale)}
                                 onClick={() => setActiveDropdown(null)}
                                 className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
                               >
@@ -617,7 +602,7 @@ export function Header() {
                           {useful.subjects.map((subject) => (
                             <li key={subject.name}>
                               <Link
-                                href={subject.href}
+                                href={resolveLocalePath(subject.href, currentLocale)}
                                 onClick={() => setActiveDropdown(null)}
                                 className="block text-sm text-gray-700 hover:text-[#003580] transition-colors"
                               >
@@ -627,7 +612,7 @@ export function Header() {
                           ))}
                         </ul>
                         <Link
-                          href={useful.allSites.href}
+                          href={resolveLocalePath(useful.allSites.href, currentLocale)}
                           onClick={() => setActiveDropdown(null)}
                           className="inline-block text-sm text-[#003580] hover:underline mt-3"
                         >
@@ -657,7 +642,7 @@ export function Header() {
                 {section.links.map((link) => (
                   <Link
                     key={link.name}
-                    href={link.href}
+                    href={resolveLocalePath(link.href, currentLocale)}
                     className="block px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-md"
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -673,7 +658,7 @@ export function Header() {
               {policies.map((link) => (
                 <Link
                   key={link.name}
-                  href={link.href}
+                  href={resolveLocalePath(link.href, currentLocale)}
                   className="block px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-md"
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -690,7 +675,7 @@ export function Header() {
                   {government.primeMinister.title}
                 </p>
                 <Link
-                  href={government.primeMinister.href}
+                  href={resolveLocalePath(government.primeMinister.href, currentLocale)}
                   className="block pl-3 py-1 text-sm text-gray-700 hover:bg-gray-100 rounded-md"
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -699,7 +684,7 @@ export function Header() {
                 {government.primeMinister.links.map((link) => (
                   <Link
                     key={link.name}
-                    href={link.href}
+                    href={resolveLocalePath(link.href, currentLocale)}
                     className="block pl-3 py-1 text-sm text-gray-600 hover:bg-gray-100 rounded-md"
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -714,7 +699,7 @@ export function Header() {
                 {government.government.links.map((link) => (
                   <Link
                     key={link.name}
-                    href={link.href}
+                    href={resolveLocalePath(link.href, currentLocale)}
                     className="block pl-3 py-1 text-sm text-gray-600 hover:bg-gray-100 rounded-md"
                     onClick={() => setMobileMenuOpen(false)}
                   >

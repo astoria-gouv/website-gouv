@@ -7,3 +7,4 @@ export { DossiersSection } from "./DossiersSection";
 export { LocalSearchSection } from "./LocalSearchSection";
 export { PrioritiesSection } from "./PrioritiesSection";
 export { InstitutionsSection } from "./InstitutionsSection";
+export { PopularServices } from "./PopularServices";
