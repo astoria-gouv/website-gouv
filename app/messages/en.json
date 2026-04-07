@@ -10,7 +10,11 @@
     "signUp": "Sign Up",
     "profile": "Profile",
     "settings": "Settings",
-    "logout": "Logout"
+    "logout": "Logout",
+    "citizensServices": "Citizens & Services",
+    "institutions": "Institutions",
+    "dataPublications": "Data & Publications",
+    "lawsRegulations": "Laws & Regulations"
   },
   "Common": {
     "loading": "Loading...",
@@ -26,19 +30,24 @@
     "next": "Next",
     "previous": "Previous",
     "yes": "Yes",
-    "no": "No"
+    "no": "No",
+    "language": "Language"
   },
-  "Home": {
-    "hero": {
-      "title": "The Etheria Times",
-      "subtitle": "Breaking news and in-depth coverage"
-    },
-    "latestNews": "Latest News",
-    "trending": "Trending",
-    "readMore": "Read More"
+  "DomainInfo": {
+    "securityMessage": "For your safety, all official government sites are under the domain *.gouv.aor. Always check the URL before sharing your information."
+  },
+  "Footer": {
+    "addressLine1": "Government Street, 1",
+    "addressLine2": "1000 New City, Astoria",
+    "phone": "+1 (555) 123-4567",
+    "termsOfUse": "Terms of Use",
+    "privacyPolicy": "Privacy Policy",
+    "accessibility": "Accessibility",
+    "sitemap": "Sitemap",
+    "copyright": "Government of the Republic of Astoria. All rights reserved."
   },
   "Meta": {
-    "title": "The Etheria Times - Live news and continuous information",
-    "description": "All the news live, news and information in continuous: politics, economy, society, culture, sports and international on The Etheria Times."
+    "title": "Government of the Republic of Astoria - Official Services",
+    "description": "Access official services, news, and information from the government of the Republic of Astoria."
   }
 }
