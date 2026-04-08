@@ -282,7 +282,7 @@ importers:
         version: 19.2.3(@types/react@19.2.14)
       autoprefixer:
         specifier: ^10.4.24
-        version: 10.4.27(postcss@8.5.8)
+        version: 10.4.27(postcss@8.5.9)
       eslint:
         specifier: ^10
         version: 10.1.0
@@ -290,8 +290,8 @@ importers:
         specifier: 16.2.2
         version: 16.2.2(@typescript-eslint/parser@8.58.0)(eslint@10.1.0)(typescript@6.0.2)
       postcss:
-        specifier: ^8.5.6
-        version: 8.5.8
+        specifier: ^8.5.9
+        version: 8.5.9
       prisma:
         specifier: 7.6.0
         version: 7.6.0(@types/react-dom@19.2.3)(@types/react@19.2.14)(react-dom@19.2.4)(react@19.2.4)(typescript@6.0.2)
@@ -3231,7 +3231,7 @@ packages:
       '@alloc/quick-lru': 5.2.0
       '@tailwindcss/node': 4.2.2
       '@tailwindcss/oxide': 4.2.2
-      postcss: 8.5.8
+      postcss: 8.5.9
       tailwindcss: 4.2.2
     dev: true
 
@@ -3937,7 +3937,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dev: false
 
-  /autoprefixer@10.4.27(postcss@8.5.8):
+  /autoprefixer@10.4.27(postcss@8.5.9):
     resolution: {integrity: sha512-NP9APE+tO+LuJGn7/9+cohklunJsXWiaWEfV3si4Gi/XHDwVNgkwr1J3RQYFIvPy76GmJ9/bW8vyoU1LcxwKHA==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
@@ -3948,7 +3948,7 @@ packages:
       caniuse-lite: 1.0.30001784
       fraction.js: 5.3.4
       picocolors: 1.1.1
-      postcss: 8.5.8
+      postcss: 8.5.9
       postcss-value-parser: 4.2.0
     dev: true
 
@@ -7216,8 +7216,8 @@ packages:
       source-map-js: 1.2.1
     dev: false
 
-  /postcss@8.5.8:
-    resolution: {integrity: sha512-OW/rX8O/jXnm82Ey1k44pObPtdblfiuWnrd8X7GJ7emImCOstunGbXUpp7HdBrFQX6rJzn3sPT397Wp5aCwCHg==}
+  /postcss@8.5.9:
+    resolution: {integrity: sha512-7a70Nsot+EMX9fFU3064K/kdHWZqGVY+BADLyXc8Dfv+mTLLVl6JzJpPaCZ2kQL9gIJvKXSLMHhqdRRjwQeFtw==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.3.11
